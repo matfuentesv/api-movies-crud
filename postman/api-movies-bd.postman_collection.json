@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "f7ae7cb0-f7d3-44c5-86b7-6dba2e65470a",
+		"name": "api-movies-bd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1152972",
+		"_collection_link": "https://galactic-sunset-296695.postman.co/workspace/1.--Configuration~48e44916-e4da-4990-b641-c948b388dcab/collection/1152972-f7ae7cb0-f7d3-44c5-86b7-6dba2e65470a?action=share&source=collection_link&creator=1152972"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/peliculas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findMovieById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/pelicula/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"pelicula",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Fight Club\",\r\n    \"ano\": 1999,\r\n    \"director\": \"David Fincher\",\r\n    \"genero\": \"Drama\",\r\n    \"sinopsis\": \"https://www.imdb.com/title/tt0137523/\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/guardar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
