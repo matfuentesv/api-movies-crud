@@ -5,7 +5,6 @@ import cl.company.movies.repository.MoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +20,7 @@ public class MovieServiceImpl implements MovieService{
     @Transactional(readOnly = true)
     public List<Pelicula> findAll() {
         return moviesRepository.findAll()
-                               .stream().sorted(Comparator.comparingInt(Pelicula::getId))
+                               .stream().sorted(Comparator.comparingLong(Pelicula::getId))
                                .collect(Collectors.toList());
     }
 
@@ -34,5 +33,20 @@ public class MovieServiceImpl implements MovieService{
     @Override
     public Pelicula saveMovie(Pelicula movie) {
         return moviesRepository.save(movie);
+    }
+
+    @Override
+    public Pelicula updateMovie(Long id, Pelicula movie) {
+        if(moviesRepository.existsById(id)){
+            movie.setId(id);
+            return moviesRepository.save(movie);
+        }   else {
+            return new Pelicula();
+        }
+    }
+
+    @Override
+    public void deleteMovie(Long id) {
+        moviesRepository.deleteById(id);
     }
 }

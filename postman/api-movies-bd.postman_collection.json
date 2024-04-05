@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f7ae7cb0-f7d3-44c5-86b7-6dba2e65470a",
+		"_postman_id": "8befa6a4-0980-4c94-9f1f-4fc063f8fc24",
 		"name": "api-movies-bd",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1152972",
-		"_collection_link": "https://galactic-sunset-296695.postman.co/workspace/1.--Configuration~48e44916-e4da-4990-b641-c948b388dcab/collection/1152972-f7ae7cb0-f7d3-44c5-86b7-6dba2e65470a?action=share&source=collection_link&creator=1152972"
+		"_exporter_id": "29351789"
 	},
 	"item": [
 		{
@@ -32,7 +31,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8081/api/pelicula/1",
+					"raw": "localhost:8081/api/pelicula/61",
 					"host": [
 						"localhost"
 					],
@@ -40,7 +39,7 @@
 					"path": [
 						"api",
 						"pelicula",
-						"1"
+						"61"
 					]
 				}
 			},
@@ -53,7 +52,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titulo\": \"Fight Club\",\r\n    \"ano\": 1999,\r\n    \"director\": \"David Fincher\",\r\n    \"genero\": \"Drama\",\r\n    \"sinopsis\": \"https://www.imdb.com/title/tt0137523/\"\r\n  }",
+					"raw": "{\r\n\r\n        \"titulo\": \"xxxx\",\r\n        \"ano\": 2024,\r\n        \"director\": \"xxxx\",\r\n        \"genero\": \"xxx\",\r\n        \"sinopsis\": \"xxxxx\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,6 +69,56 @@
 					"path": [
 						"api",
 						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMovie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/eliminar/21",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"eliminar",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMovie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Matrix Recargado\",\r\n    \"ano\": 2003,\r\n    \"director\": \"Hermanas Wachowski\",\r\n    \"genero\": \"Ciencia ficción\",\r\n    \"sinopsis\": \"xxxxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/actualizar/61",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"actualizar",
+						"61"
 					]
 				}
 			},

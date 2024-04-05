@@ -29,9 +29,24 @@ public class MovieController {
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<?> save(@RequestBody Pelicula movie){
+    public ResponseEntity<Pelicula> save(@RequestBody Pelicula movie){
 
         return ResponseEntity.ok(movieService.saveMovie(movie));
+    }
+
+    @PutMapping("actualizar/{id}")
+    public ResponseEntity<Pelicula> updateStudent(@PathVariable Long id, @RequestBody Pelicula movie) {
+        return ResponseEntity.ok(movieService.updateMovie(id, movie));
+    }
+
+    @DeleteMapping("eliminar/{id}")
+    public ResponseEntity<?> deleteMovie(@PathVariable Long id) {
+        Optional<Pelicula> movie = movieService.findById(id);
+        if (movie.isPresent()) {
+            movieService.deleteMovie(id);
+            return ResponseEntity.ok().body("Pelicula eliminada correctamente");
+        }
+        return ResponseEntity.notFound().build();
     }
 
 }
